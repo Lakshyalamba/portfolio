@@ -1,0 +1,133 @@
+.projects-container {
+  padding: 6rem 2rem 2rem;
+  min-height: 100vh;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  padding: 1.5rem;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease-in;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-title {
+  color: #a8a8a8;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.project-features {
+  margin-bottom: 1.5rem;
+}
+
+.project-features h5 {
+  margin-bottom: 0.5rem;
+}
+
+.project-features ul {
+  list-style-position: inside;
+  padding-left: 1rem;
+}
+
+.project-features li {
+  margin-bottom: 0.3rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.project-button {
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.project-button:hover {
+  transform: translateY(-2px);
+}
+
+.glass-morph {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 5rem 1rem 1rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-links {
+    flex-direction: column;
+  }
+  
+  .project-button {
+    width: 100%;
+    text-align: center;
+  }
+}
