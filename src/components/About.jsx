@@ -1,112 +1,13 @@
-import React from 'react';
-import { Award, BookOpen, GitMerge, GraduationCap } from 'lucide-react';
-
-export default function About() {
-  return (
-    <section id="about" style={{ position: 'relative', background: 'var(--bg-secondary)', overflow: 'hidden' }}>
-      <div className="radial-glow glow-cyan" style={{ top: '-10%', left: '80%' }} />
-      
-      <div className="section-container">
-        <div className="grid-2" style={{ alignItems: 'start' }}>
-          
-          {/* Left Column: Heading */}
-          <div>
-            <p className="section-tag">// 01 ⋄ ABOUT ME</p>
-            <h2 className="section-title" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: '1.1', marginBottom: '2rem' }}>
-              Bridging Data Science &amp; Backend Engineering
-            </h2>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6', fontSize: '1.05rem', marginBottom: '2.5rem' }}>
-              I focus on creating scalable, high-performance backends and applying data science methodologies to build smart applications. I like digging into data streams, optimizing query pipelines, and deploying predictive models.
-            </p>
-            
-            {/* Quick Education Card */}
-            <div style={{
-              background: 'rgba(255, 255, 255, 0.02)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: '16px',
-              padding: '1.5rem',
-              display: 'flex',
-              gap: '1.25rem',
-              alignItems: 'flex-start'
-            }}>
-              <div style={{
-                background: 'rgba(0, 240, 255, 0.1)',
-                padding: '0.75rem',
-                borderRadius: '12px',
-                color: 'var(--accent-cyan)'
-              }}>
-                <GraduationCap size={24} />
-              </div>
-              <div>
-                <h4 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '0.25rem' }}>Newton School of Technology</h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
-                  B.Tech in Data Science (2024 – 2028)
-                </p>
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                  <span style={{ 
-                    fontSize: '0.8rem', 
-                    fontFamily: 'var(--font-mono)', 
-                    color: 'var(--accent-cyan)',
-                    background: 'rgba(0,240,255,0.05)',
-                    padding: '0.1rem 0.5rem',
-                    borderRadius: '4px'
-                  }}>
-                    CGPA: 8.0/10.0
-                  </span>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                    Top 10% of cohort
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Highlights Grid */}
-          <div style={{ display: 'grid', gap: '1.5rem' }}>
-            
-            {/* Highlight 1 */}
-            <div className="glass-card" style={{ padding: '1.75rem' }}>
-              <div style={{ display: 'flex', gap: '1.25rem' }}>
-                <div style={{ color: 'var(--accent-cyan)' }}><BookOpen size={22} /></div>
-                <div>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.5rem' }}>Algorithmic Core</h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>
-                    Solid foundation in Data Structures, Algorithms, and Object-Oriented Programming. Solving complex computation constraints with a 1980+ LeetCode contest rating.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Highlight 2 */}
-            <div className="glass-card" style={{ padding: '1.75rem' }}>
-              <div style={{ display: 'flex', gap: '1.25rem' }}>
-                <div style={{ color: 'var(--accent-violet)' }}><GitMerge size={22} /></div>
-                <div>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.5rem' }}>Open Source Contributor</h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>
-                    Active contributor to global messaging codebases like <strong>Zulip</strong> and <strong>Rocket.Chat</strong>. Focused on backend synchronization logic and optimizing API endpoints.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Highlight 3 */}
-            <div className="glass-card" style={{ padding: '1.75rem' }}>
-              <div style={{ display: 'flex', gap: '1.25rem' }}>
-                <div style={{ color: 'var(--accent-pink)' }}><Award size={22} /></div>
-                <div>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.5rem' }}>Hackathons &amp; Buildathons</h3>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>
-                    Participated in multiple hackathons, including the Smart India Hackathon (SIH) internal rounds. GUVI AI Buildathon certificate earner in python-based Agentic AI systems.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
+import { useState } from 'react';
+import { ArrowUpRight, Fingerprint, GraduationCap, RotateCw, GitBranch, Terminal, Sparkles } from 'lucide-react';
+import './Sections.css';
+export default function About(){
+ const [back,setBack]=useState(false);
+ return <section id="about" className="studio-section about-studio"><div className="section-container">
+  <div className="studio-heading"><div><p className="studio-kicker">01 / THE HUMAN LAYER</p><h2>A little logic.<br/>A lot of <em>curiosity.</em></h2></div><p>Behind every system is someone asking<br/>“what if we built it differently?”</p></div>
+  <div className="about-studio-grid">
+   <div className="identity-wrap"><div className={`identity-card ${back?'flipped':''}`}><div className="identity-face identity-front" aria-hidden={back} inert={back?true:undefined}><div className="identity-top"><span>BUILDER IDENTIFICATION</span><Fingerprint size={24}/></div><div className="identity-monogram" aria-hidden="true">lc<span>✳</span></div><div className="identity-name"><h3>Lakshya<br/>Choudhary</h3><span>DEVELOPER · STUDENT · EXPLORER</span></div><div className="identity-bottom"><span>BASED IN CURIOSITY<br/>POWERED BY CODE</span><span className="identity-barcode" aria-hidden="true"/></div></div><div className="identity-face identity-back" aria-hidden={!back} inert={!back?true:undefined}><span className="studio-micro">A PEEK INTO MY THINKING</span><Terminal size={30}/><pre><span>// the way I build</span>{'\n'}const approach = {'{'}{'\n'}  ask: "why?",{'\n'}  design: "with intent",{'\n'}  build: "to learn",{'\n'}  repeat: true{'\n'}{'}'};</pre><p>Good systems start with better questions.</p></div></div><button className="identity-flip" onClick={()=>setBack(!back)} aria-pressed={back}><RotateCw size={14}/>{back?'Back to the human':'Peek at the source'}<span>↺</span></button></div>
+   <div className="about-notes"><div className="about-intro"><span className="studio-micro">MORE THAN A TECH STACK</span><h3>I connect the dots between<br/>data, systems, and people.</h3><p>I focus on scalable backends and smart applications. I enjoy exploring data streams, optimizing query pipelines, and bringing predictive models into products people can use.</p></div><div className="education-ticket"><div className="ticket-icon"><GraduationCap size={25}/></div><div><span className="studio-micro">CURRENT CHAPTER / 2024 — 2028</span><h4>Newton School of Technology</h4><p>B.Tech in Data Science · Rishihood University</p><div className="ticket-tags"><span>8.0 / 10 CGPA</span><span>Top 10% of cohort</span></div></div><span className="ticket-notch" aria-hidden="true"/></div><div className="about-mini-grid"><a href="#experience"><GitBranch size={23}/><h4>Built in the open.</h4><p>Contributing to Zulip & Rocket.Chat, with a focus on backend synchronization.</p><ArrowUpRight size={17}/></a><a href="#stats"><Sparkles size={23}/><h4>Always a problem to solve.</h4><p>Algorithms, hackathons, SIH internal rounds, and the GUVI AI Buildathon.</p><ArrowUpRight size={17}/></a></div></div>
+  </div>
+ </div></section>;
 }
