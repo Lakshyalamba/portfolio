@@ -1,165 +1,18 @@
-import { Mail, Code } from 'lucide-react';
-
-const GithubIcon = (props) => (
-  <svg
-    viewBox="0 0 24 24"
-    width="20"
-    height="20"
-    stroke="currentColor"
-    strokeWidth="2"
-    fill="none"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-    <path d="M9 18c-4.51 2-5-2-7-2" />
-  </svg>
-);
-
-const LinkedinIcon = (props) => (
-  <svg
-    viewBox="0 0 24 24"
-    width="20"
-    height="20"
-    stroke="currentColor"
-    strokeWidth="2"
-    fill="none"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect x="2" y="9" width="4" height="12" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-export default function Footer() {
-  return (
-    <footer id="footer" style={{ 
-      position: 'relative', 
-      background: 'var(--bg-secondary)', 
-      borderTop: '1px solid var(--border-subtle)',
-      overflow: 'hidden'
-    }}>
-      <div className="radial-glow glow-cyan" style={{ top: '0', left: '50%', transform: 'translateX(-50%)' }} />
-
-      <div className="section-container" style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
-        <div className="grid-2" style={{ alignItems: 'center' }}>
-          
-          {/* CTA Header */}
-          <div style={{ textAlign: 'left' }}>
-            <h2 style={{ 
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
-              fontWeight: '900', 
-              tracking: 'tighter',
-              lineHeight: '1.0',
-              marginBottom: '1.5rem'
-            }}>
-              <span style={{ color: 'var(--text-secondary)' }}>Let's build</span> <br/>
-              <span style={{
-                background: 'linear-gradient(90deg, var(--accent-cyan), var(--accent-violet))',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textFillColor: 'transparent',
-                fontWeight: '900'
-              }}>
-                something intelligent.
-              </span>
-            </h2>
-          </div>
-
-          {/* Contact Details & Links */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '1.5rem' }}>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.6', maxWidth: '400px' }}>
-              Currently seeking opportunities in Backend Engineering, Data Engineering, and Applied Generative AI.
-            </p>
-
-            <a 
-              href="mailto:lakylamba266@gmail.com" 
-              className="btn-primary"
-              style={{ padding: '1rem 2rem', gap: '0.75rem', fontSize: '0.95rem' }}
-            >
-              <Mail size={18} />
-              Start a Conversation
-            </a>
-
-            {/* Socials Row */}
-            <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
-              <a 
-                href="https://github.com/Lakshyalamba" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="footer-social-btn"
-                aria-label="GitHub"
-              >
-                <GithubIcon />
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/lakshyachoudhary26/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="footer-social-btn"
-                aria-label="LinkedIn"
-              >
-                <LinkedinIcon />
-              </a>
-              <a 
-                href="https://leetcode.com/u/lakshya_choudhary/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="footer-social-btn"
-                aria-label="LeetCode"
-              >
-                <Code size={20} />
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Bottom copyright bar */}
-        <div style={{ 
-          borderTop: '1px solid var(--border-subtle)', 
-          marginTop: '4rem', 
-          paddingTop: '2rem', 
-          display: 'flex', 
-          flexDirection: 'column', 
-          alignItems: 'center', 
-          gap: '1rem',
-          fontSize: '0.8rem',
-          color: 'var(--text-muted)'
-        }}>
-          <p>© 2026 Lakshya. All rights reserved.</p>
-          <p style={{ fontFamily: 'var(--font-mono)', letterSpacing: '1px' }}>
-            DESIGNED &amp; ENGINEERED WITH LOGIC
-          </p>
-        </div>
-
-      </div>
-
-      <style dangerouslySetInnerHTML={{__html: `
-        .footer-social-btn {
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid var(--border-subtle);
-          color: var(--text-secondary);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 0.3s;
-        }
-        .footer-social-btn:hover {
-          color: var(--accent-cyan);
-          border-color: var(--accent-cyan);
-          background: rgba(0, 240, 255, 0.05);
-          box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
-          transform: translateY(-2px);
-        }
-      `}} />
-    </footer>
-  );
+import { useEffect, useRef, useState } from 'react';
+import { ArrowUpRight, ArrowUp, Copy, Check, Mail, Sparkles } from 'lucide-react';
+import './Footer.css';
+const email='lakylamba266@gmail.com';
+const socials=[['GitHub','The code behind the work','https://github.com/Lakshyalamba'],['LinkedIn','Let’s connect professionally','https://www.linkedin.com/in/lakshyachoudhary26/'],['LeetCode','One more problem to solve','https://leetcode.com/u/lakshya_choudhary/']];
+export default function Footer(){
+ const [copyState,setCopyState]=useState('');const timer=useRef(null);
+ useEffect(()=>()=>clearTimeout(timer.current),[]);
+ async function copyEmail(){clearTimeout(timer.current);try{await navigator.clipboard.writeText(email);setCopyState('copied');}catch{setCopyState('failed');}timer.current=setTimeout(()=>setCopyState(''),3500);}
+ return <footer id="footer" className="studio-footer"><div className="footer-orbit" aria-hidden="true"/><div className="section-container">
+  <div className="footer-topline"><span>07 / THE NEXT CHAPTER</span><a href="#hero">BACK TO THE BEGINNING <ArrowUp size={13}/></a></div>
+  <div className="footer-invitation"><div><p className="footer-eyebrow"><i/> GOOD THINGS START WITH A CONVERSATION</p><h2>Your next idea.<br/>Our next <em>build.</em><span className="footer-asterisk" aria-hidden="true">✳</span></h2><p className="footer-intro">Exploring opportunities in backend engineering, data engineering, and applied generative AI. Have a role, a project, or an interesting problem?</p></div><a className="footer-mail-stamp" href={`mailto:${email}`} aria-label={`Start a conversation with Lakshya at ${email}`}><span>LET’S MAKE IT HAPPEN</span><ArrowUpRight size={50} strokeWidth={1}/><span>SAY HELLO ↗</span></a></div>
+  <div className="footer-contact-strip"><div className="footer-email"><Mail size={20}/><a href={`mailto:${email}`}>{email}</a><button onClick={copyEmail} aria-label={copyState==='copied'?'Email address copied':'Copy email address'} title="Copy email address">{copyState==='copied'?<Check size={17}/>:<Copy size={17}/>}</button></div><span className="footer-copy-status" role="status">{copyState==='copied'?'Copied. Let’s talk soon.':copyState==='failed'?'Select the email to copy, or click to open your mail app.':'ONE EMAIL AWAY FROM SOMETHING GOOD.'}</span></div>
+  <div className="footer-destinations">{socials.map(([name,note,url],i)=><a key={name} href={url} target="_blank" rel="noreferrer"><span className="footer-destination-index">0{i+1} / ELSEWHERE</span><div><h3>{name}</h3><ArrowUpRight size={24}/></div><p>{note}</p></a>)}<a className="footer-ai-link" href="#chat"><span className="footer-destination-index">04 / STILL CURIOUS?</span><div><h3>Ask my AI</h3><Sparkles size={22}/></div><p>A shortcut to the person behind the work.</p></a></div>
+  <div className="footer-signoff"><a className="footer-wordmark" href="#hero" aria-label="Lakshya — back to home">LAKSHYA<span>↗</span></a><div><span>BUILT WITH INTENT.</span><span>ALWAYS A WORK IN PROGRESS.</span></div></div>
+  <div className="footer-colophon"><span>© {new Date().getFullYear()} Lakshya Choudhary</span><a href="/Full_Stack2.pdf" target="_blank" rel="noreferrer">RESUME / PDF <ArrowUpRight size={11}/></a><span>THANKS FOR SCROLLING THIS FAR. <span aria-hidden="true">✳</span></span></div>
+ </div></footer>;
 }
