@@ -97,3 +97,22 @@ npm run build
 ```bash
 npm run preview
 ```
+
+## NVIDIA Nemotron assistant
+
+Requires Node.js 22+ and an NVIDIA API key with access to the configured model.
+
+1. Copy `.env.example` to `.env` if it does not already exist.
+2. Set `NVIDIA_API_KEY` in `.env` locally. Do not use a `VITE_` prefix or commit the key.
+3. Run `npm run dev`. Restart after changing `.env`.
+4. Open the local URL printed by Vite and choose **AI Agent**.
+
+Default model: `nvidia/nemotron-3.5-lightning-30b-a3b`. Override it with `NVIDIA_MODEL` if your account uses another Nemotron model. Create a key through https://build.nvidia.com/ and check model access there.
+
+The server-side Vite middleware calls NVIDIA's chat-completions endpoint. No credential is returned to the browser. The UI keeps conversation history in memory, sends the latest turns with each question, supports stop/retry/reset, and shows connection status honestly. Provider failures are shown without substituting canned AI answers. Questions and profile context are sent to NVIDIA. The server does not persist conversations.
+
+Project and experience facts are shared by the UI and assistant in `src/data/`. Other profile facts and behavioral instructions live in `server/chat.js`. Update these when your experience changes. Listed statistics are snapshots, not live API lookups. Portfolio context links help visitors inspect source sections; they are not claim-level citations.
+
+Run `npm run build` then `npm run preview` to preview a production build with the same API middleware. A static-only deployment of `dist/` cannot run the assistant: deploy the API as a server/serverless route with `NVIDIA_API_KEY` configured privately before public hosting. The local middleware has a basic per-address request limit; public deployment needs host-level abuse protection.
+
+API reference: https://docs.api.nvidia.com/nim/reference/nvidia-nemotron-3-5-lightning-30b-a3b-infer
