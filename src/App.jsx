@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
+import CreativeCursor from './components/CreativeCursor';
 import Hero from './components/Hero';
 import ProjectFinder from './components/ProjectFinder';
 import About from './components/About';
@@ -39,6 +40,7 @@ export default function App() {
       <a className="skip-link" href="#main-content">Skip to content</a>
       <div>
         <Navbar />
+        <CreativeCursor />
         <ProjectFinder />
         
         <main id="main-content">
