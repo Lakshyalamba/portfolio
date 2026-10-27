@@ -1,5 +1,5 @@
 import { projectList } from '../data/projects';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 
 const GithubIcon = (props) => (
@@ -22,6 +22,12 @@ const GithubIcon = (props) => (
 export default function Projects() {
   const [filter, setFilter] = useState('All');
   const [expandedProjects, setExpandedProjects] = useState({});
+
+  useEffect(() => {
+    const reset = () => setFilter('All');
+    window.addEventListener('show-all-projects', reset);
+    return () => window.removeEventListener('show-all-projects', reset);
+  }, []);
 
   const categories = ['All', 'Full Stack', 'Frontend'];
 
@@ -84,7 +90,8 @@ export default function Projects() {
             
             return (
               <div 
-                key={project.id} 
+                key={project.id}
+                id={`project-${project.id}`}
                 onClick={() => toggleProject(project.id)}
                 className={`glass-card project-card-interactive ${isExpanded ? 'card-expanded' : ''}`}
                 style={{ 
@@ -95,6 +102,7 @@ export default function Projects() {
                   cursor: 'pointer'
                 }}
               >
+                <div className="project-art" aria-hidden="true" style={{'--art-color': ['#c4f28a','#b5a2ff','#ffb784'][projectList.indexOf(project)%3]}}><div className="project-art-grid"/><span className="project-art-number">BUILD / {String(projectList.indexOf(project)+1).padStart(2,'0')}</span><div className="project-art-shape">{['₹','↗','{ }','⤴','Aa','A+','♡','RU','R:R'][projectList.indexOf(project)]}</div><span className="project-art-type">{project.tags.slice(0,2).join(' + ')}</span></div>
                 {/* Card Header */}
                 <div style={{ 
                   display: 'flex', 
