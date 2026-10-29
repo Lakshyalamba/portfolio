@@ -29,7 +29,7 @@ export default function Projects() {
     return () => window.removeEventListener('show-all-projects', reset);
   }, []);
 
-  const categories = ['All', 'Full Stack', 'Frontend'];
+  const categories = ['All', ...new Set(projectList.map(project => project.category))];
 
 
 
@@ -55,7 +55,8 @@ export default function Projects() {
         {/* Filter Tabs */}
         <div style={{ 
           display: 'flex', 
-          gap: '1rem', 
+          gap: '1rem',
+          flexWrap: 'wrap',
           marginBottom: '3rem', 
           borderBottom: '1px solid var(--border-subtle)',
           paddingBottom: '1rem',
@@ -102,7 +103,7 @@ export default function Projects() {
                   cursor: 'pointer'
                 }}
               >
-                <div className="project-art" aria-hidden="true" style={{'--art-color': ['#c4f28a','#b5a2ff','#ffb784'][projectList.indexOf(project)%3]}}><div className="project-art-grid"/><span className="project-art-number">BUILD / {String(projectList.indexOf(project)+1).padStart(2,'0')}</span><div className="project-art-shape">{['₹','↗','{ }','⤴','Aa','A+','♡','RU','R:R'][projectList.indexOf(project)]}</div><span className="project-art-type">{project.tags.slice(0,2).join(' + ')}</span></div>
+                <div className="project-art" aria-hidden="true" style={{'--art-color': ['#c4f28a','#b5a2ff','#ffb784'][projectList.indexOf(project)%3]}}><div className="project-art-grid"/><span className="project-art-number">BUILD / {String(projectList.indexOf(project)+1).padStart(2,'0')}</span><div className="project-art-shape">{['₹','↗','{ }','⤴','Aa','A+','♡','MCP','R:R'][projectList.indexOf(project)]}</div><span className="project-art-type">{project.tags.slice(0,2).join(' + ')}</span></div>
                 {/* Card Header */}
                 <div style={{ 
                   display: 'flex', 
@@ -132,7 +133,7 @@ export default function Projects() {
                     >
                       <GithubIcon />
                     </a>
-                    <a 
+                    {project.demo && <a 
                       href={project.demo} 
                       target="_blank" 
                       rel="noopener noreferrer" 
@@ -140,7 +141,7 @@ export default function Projects() {
                       title="Live Demo"
                     >
                       <ExternalLink size={18} />
-                    </a>
+                    </a>}
                   </div>
                 </div>
 

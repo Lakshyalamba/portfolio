@@ -105,19 +105,18 @@ export const projectList = [
       demo: 'https://huggingface.co/spaces/lakshyalamba/cardiorisk-ai'
     },
     {
-      id: 'rishihood',
-      title: 'Rishihood University Landing Page',
-      category: 'Frontend',
-      description: 'A polished, responsive landing page for Rishihood University built with Next.js, Tailwind CSS, Framer Motion, and Lucide icons. Features a strong hero section, program highlights, campus features, student testimonials, and a focused application call to action.',
+      id: 'mcptoolforge',
+      title: 'MCPToolForge',
+      category: 'Developer Tools',
+      description: 'A Python framework for creating, testing, and exposing Model Context Protocol (MCP) servers with minimal boilerplate. Defines tools from typed Python functions and docstrings, supports STDIO and SSE transports, and offers an optional DSPy-powered semantic intelligence layer.',
       bullets: [
-        'Designed responsive card sections with smooth scroll reveals and layout transitions.',
-        'Built an animated testimonial carousel and mobile hamburger navigation system.',
-        'Polished cross-browser layout issues and minimized bundle asset loading times.'
+        'Automatically derives JSON Schemas from function type annotations and docstrings, with support for MCP tools, resources, and prompt templates.',
+        'Provides in-process validation through MCPTestClient and a CLI for project scaffolding, server execution, and registry inspection.',
+        'Adds optional DSPy-based semantic tool selection, operational risk classification, and few-shot optimization with deterministic fallback.'
       ],
-      result: 'Developed a high-converting admissions portal with fluid web animations.',
-      tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Lucide React'],
-      github: 'https://github.com/Lakshyalamba/Reducate_Assignment',
-      demo: 'https://rishihoodlanding.vercel.app/'
+      result: 'Simplifies MCP server development with automatic schemas, local testing, and optional semantic tool discovery.',
+      tags: ['Python', 'MCP', 'DSPy', 'JSON Schema', 'CLI', 'pytest'],
+      github: 'https://github.com/Lakshyalamba/toolforge'
     },
     {
       id: 'trading',

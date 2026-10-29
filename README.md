@@ -14,7 +14,7 @@
 
 ### 1. Conversational AI Chat Agent
 * Simulated agentic chat console allowing visitors to ask questions about projects, contest ratings, or skill matrices.
-* Supported by a comprehensive keyword-matching response helper containing details about all 9 projects.
+* Uses NVIDIA Nemotron with shared portfolio context containing all 9 projects, including MCPToolForge.
 * Local message scrolling isolated cleanly inside the chat bubble list with layout-paint timing timeout.
 
 ### 2. Interactive Projects (3-Column Grid)
