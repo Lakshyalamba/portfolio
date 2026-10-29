@@ -119,18 +119,17 @@ export const projectList = [
       github: 'https://github.com/Lakshyalamba/toolforge'
     },
     {
-      id: 'trading',
-      title: 'Trading Risk-Reward Calculator',
-      category: 'Frontend',
-      description: 'A production-ready trading utility providing real-time risk-reward analysis and position sizing. Features include trade interpretation panels, success metrics, and professional PDF exports using jsPDF, styled with a custom brand theme.',
+      id: 'kyc-setu',
+      title: 'KYC Setu',
+      category: 'Full Stack',
+      description: 'An end-to-end KYC-style identity-verification portfolio demo using synthetic data. Combines mobile-friendly customer onboarding, encrypted document uploads, OCR extraction, explainable risk scoring, officer review, and an auditor console. Selfie, face matching, and liveness are simulated through a development endpoint.',
       bullets: [
-        'Calculated real-time trade ratios, margins, and lot sizing metrics dynamically based on risk parameters.',
-        'Integrated client-side PDF template compiler using jsPDF to generate trading plan receipts.',
-        'Validated input forms to handle numeric anomalies and prevent calculations errors.'
+        'Built a Next.js customer and staff interface backed by Express, Prisma, and PostgreSQL, with role-based permissions and an explicit application state machine.',
+        'Integrated a stateless FastAPI and PaddleOCR service with Redis/BullMQ workers for document extraction, validation, and explainable rule-based risk assessment.',
+        'Implemented per-file AES-256-GCM envelope encryption, short-lived document links, and an append-only audit log with a daily hash chain and signed audit packets.'
       ],
-      result: 'Enabled day traders to calculate position risk and export trade blueprints.',
-      tags: ['Next.js', 'Tailwind CSS', 'TypeScript', 'jsPDF'],
-      github: 'https://github.com/Lakshyalamba/risk-reward-calculator',
-      demo: 'https://risk-reward-calculator-beta.vercel.app/'
+      result: 'Demonstrates a customer-to-officer review workflow with encrypted documents, traceable decisions, and verifiable audit history on synthetic data.',
+      tags: ['Next.js', 'Express', 'PostgreSQL', 'Prisma', 'FastAPI', 'PaddleOCR', 'Redis', 'BullMQ'],
+      github: 'https://github.com/Lakshyalamba/kyc_setu'
     }
   ];

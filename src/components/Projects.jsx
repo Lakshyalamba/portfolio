@@ -103,7 +103,7 @@ export default function Projects() {
                   cursor: 'pointer'
                 }}
               >
-                <div className="project-art" aria-hidden="true" style={{'--art-color': ['#c4f28a','#b5a2ff','#ffb784'][projectList.indexOf(project)%3]}}><div className="project-art-grid"/><span className="project-art-number">BUILD / {String(projectList.indexOf(project)+1).padStart(2,'0')}</span><div className="project-art-shape">{['₹','↗','{ }','⤴','Aa','A+','♡','MCP','R:R'][projectList.indexOf(project)]}</div><span className="project-art-type">{project.tags.slice(0,2).join(' + ')}</span></div>
+                <div className="project-art" aria-hidden="true" style={{'--art-color': ['#c4f28a','#b5a2ff','#ffb784'][projectList.indexOf(project)%3]}}><div className="project-art-grid"/><span className="project-art-number">BUILD / {String(projectList.indexOf(project)+1).padStart(2,'0')}</span><div className="project-art-shape">{['₹','↗','{ }','⤴','Aa','A+','♡','MCP','KYC'][projectList.indexOf(project)]}</div><span className="project-art-type">{project.tags.slice(0,2).join(' + ')}</span></div>
                 {/* Card Header */}
                 <div style={{ 
                   display: 'flex', 
@@ -133,7 +133,7 @@ export default function Projects() {
                     >
                       <GithubIcon />
                     </a>
-                    {project.demo && <a 
+                    {project.demo && <a
                       href={project.demo} 
                       target="_blank" 
                       rel="noopener noreferrer" 
